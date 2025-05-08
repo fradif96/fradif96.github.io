@@ -3,109 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francesco Di Felice - Personal Webpage</title>
+    <title>Francesco Di Felice - Robotics and AI Researcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Roboto Slab', serif;
         }
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem;
-        }
-        .content {
-            max-width: 800px;
-            margin: auto;
-            padding: 1.5rem;
-        }
-        .profile {
+        .profile-img {
             width: 180px;
             height: 180px;
-            border-radius: 50%;
-            margin: 1rem auto;
-            display: block;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .card {
-            background-color: #fff;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .publication {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 0.5rem 0;
-        }
-        .publication img {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
             object-fit: cover;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Francesco Di Felice</h1>
-        <p>Robotics and AI Researcher</p>
+<body class="bg-gray-50 text-gray-700">
+    <header class="bg-gradient-to-r from-gray-800 to-gray-600 text-white py-10 text-center shadow-lg">
+        <h1 class="text-4xl font-bold">Francesco Di Felice</h1>
+        <p class="text-xl mt-2">Robotics and AI Researcher</p>
     </header>
-    <div class="content">
-        <img src="assets/profile.jpg" alt="Profile Picture" class="profile">
-        <div class="card">
-            <h2>About Me</h2>
-            <p>My research focuses on enhancing the generalization capabilities of deep learning methods in robotics, particularly in perception and planning. I aim to enable adaptation to unseen tasks using foundation models such as LLMs and VLMs, with a primary focus on collaborative robotics.</p>
-        </div>
-        <div class="card">
-            <h2>Education</h2>
-            <ul>
-                <li>Ph.D. in AI for Robotics - School of Advanced Studies Sant'Anna (2021 - 2024)</li>
-                <li>M.Sc. in Control Systems Engineering - University of L'Aquila (2018 - 2021)</li>
-                <li>B.Sc. in Computer Engineering - University of L'Aquila (2015 - 2018)</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h2>Publications</h2>
-            <div class="publication">
-                <img src="assets/publication1.jpg" alt="Publication Image">
-                <a href="https://example.com/publication1">Deep reinforcement learning for closed-loop blood glucose control</a>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <section class="text-center">
+            <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img rounded-full mx-auto shadow-md">
+            <div class="mt-8 p-6 bg-white shadow-lg rounded-xl">
+                <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+                <p>I am a Robotics and AI Researcher specializing in enhancing generalization capabilities of deep learning methods for robotics perception and planning. My focus is on enabling robots to adapt rapidly to unseen tasks through foundation models like LLMs and VLMs, particularly in collaborative robotics scenarios.</p>
+                <p class="mt-3">I hold a Ph.D. in AI for Robotics from the School of Advanced Studies Sant'Anna, where I developed pioneering methods for zero-shot and one-shot imitation learning, and contributed significantly to RGB-based 3D generative modeling and 6D pose estimation. Currently, I lead R&D initiatives in Robotics and AI at Almaviva S.p.A., focusing on strategic innovation and technical excellence.</p>
             </div>
-            <div class="publication">
-                <img src="assets/publication2.jpg" alt="Publication Image">
-                <a href="https://example.com/publication2">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
+        </section>
+
+        <section class="mt-12">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Publications</h2>
+            <div class="space-y-4">
+                <a href="https://www.sciencedirect.com/science/article/pii/S2405896323000630" class="block bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+                    Deep Reinforcement Learning for Closed-loop Blood Glucose Control
+                </a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10027166" class="block bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+                    i2c-net: Using Instance-Level Neural Networks for Monocular Category-Level 6D Pose Estimation
+                </a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10202200" class="block bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+                    One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks
+                </a>
+                <a href="https://ieeexplore.ieee.org/document/10802157" class="block bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+                    Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation
+                </a>
+                <a href="https://ieeexplore.ieee.org/document/10971214" class="block bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+                    Instantpose: Zero-shot Instance-level 6D Pose Estimation from a Single View
+                </a>
             </div>
-            <div class="publication">
-                <img src="assets/publication3.jpg" alt="Publication Image">
-                <a href="https://example.com/publication3">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
+        </section>
+
+        <section class="mt-12">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Current Position</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold">Robotics and AI R&D Project Manager at Almaviva S.p.A.</h3>
+                <p class="mt-2">Leading innovation strategies and managing the setup of advanced robotics research labs, my role includes driving cutting-edge AI developments aligned with strategic business objectives.</p>
             </div>
-            <div class="publication">
-                <img src="assets/publication4.jpg" alt="Publication Image">
-                <a href="https://example.com/publication4">Instantpose: Zero-shot instance-level 6d pose estimation from a single view</a>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <p>Contact: francescodifelice96@gmail.com | LinkedIn: <a href="https://www.linkedin.com/in/francesco-di-felice-33a141175/">Francesco Di Felice</a></p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>Contact: <a href="mailto:francescodifelice96@gmail.com" class="underline">francescodifelice96@gmail.com</a> | LinkedIn: <a href="https://www.linkedin.com/in/francesco-di-felice-33a141175/" class="underline">Francesco Di Felice</a> | <a href="https://scholar.google.com" class="underline">Google Scholar</a></p>
     </footer>
 </body>
 </html>
-
