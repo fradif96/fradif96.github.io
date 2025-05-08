@@ -14,137 +14,47 @@
       --radius: 8px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      color: var(--fg);
-      background: var(--bg);
-      line-height: 1.5;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: var(--card-bg);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      padding: 1.5rem 1rem;
-      text-align: center;
-      z-index: 100;
-    }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: var(--fg); background: var(--bg); line-height: 1.5; display: flex; flex-direction: column; min-height: 100vh; }
+    header { position: sticky; top: 0; background: var(--card-bg); box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 1.5rem 1rem; text-align: center; z-index: 100; }
     header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
     header p { font-size: 1.1rem; color: var(--accent); }
-    main[role="main"] {
-      flex: 1;
-      max-width: 900px;
-      width: 100%;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    @media (max-width: 600px) {
-      main[role="main"] {
-        display: block;
-        margin: 1rem;
-      }
-      .photo { margin: 0 auto 2rem; }
-    }
-    .photo {
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform .2s, box-shadow .2s;
-    }
+    main[role="main"] { flex: 1; max-width: 900px; width: 100%; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start; }
+    @media (max-width: 600px) { main[role="main"] { display: block; margin: 1rem; } .photo { margin: 0 auto 2rem; } }
+    .photo { width: 240px; height: 240px; border-radius: 50%; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform .2s, box-shadow .2s; }
     .photo:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    section {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-      transition: transform .2s, box-shadow .2s;
-    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    section { background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 2rem; transition: transform .2s, box-shadow .2s; }
     section:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 0.25rem;
-      color: var(--fg);
-    }
-    section p {
-      max-width: 60ch;
-      margin-bottom: 1rem;
-    }
-    p, li {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
-    }
+    h2 { margin-bottom: 1rem; font-size: 1.5rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.25rem; color: var(--fg); }
+    section p { max-width: 60ch; margin-bottom: 1rem; }
+    p, li { margin-bottom: 0.75rem; font-size: 1rem; }
     ul { list-style: disc inside; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .publications {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .publication-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.5rem;
-      border-radius: var(--radius);
-      transition: transform .2s, box-shadow .2s;
-    }
+    .publications { display: flex; flex-direction: column; gap: 1.5rem; }
+    .publication-group { margin-top: 1rem; }
+    .publication-group h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--fg); }
+    .publication-list { display: flex; flex-direction: column; gap: 1rem; }
+    .publication-item { display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border-radius: var(--radius); transition: transform .2s, box-shadow .2s; }
     .publication-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .publication-item .teaser {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      flex-shrink: 0;
-    }
+    .publication-item .teaser { width: 60px; height: 60px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 2px 6px rgba(0,0,0,0.1); flex-shrink: 0; }
     .publication-item a { flex: 1; }
-    footer[role="contentinfo"] {
-      text-align: center;
-      padding: 1.5rem;
-      background: var(--card-bg);
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
-    }
+    footer[role="contentinfo"] { text-align: center; padding: 1.5rem; background: var(--card-bg); font-size: 0.9rem; box-shadow: 0 -2px 4px rgba(0,0,0,0.05); }
   </style>
 </head>
 <body>
   <header role="banner">
     <h1>Francesco Di Felice</h1>
     <p>Robotics &amp; AI Researcher</p>
+    <nav>
+      <a href="index.html">Home</a> | <a href="publications.html">Publications</a> | <a href="#contact">Contact</a>
+    </nav>
   </header>
   <main role="main">
     <div class="photo">
       <img src="assets/profile.jpg" alt="Portrait of Francesco Di Felice" loading="lazy">
     </div>
     <div>
-      <section id="contact">
-	<h2>Contact</h2>
-	<ul>
-	  <li>Email: <a href="mailto:francescodifelice96@gmail.com">francescodifelice96@gmail.com</a></li>
-	  <li>LinkedIn: <a href="…">francesco-di-felice-33a141175</a></li>
-	  <li>Google Scholar: <a href="…">Profile</a></li>
-	</ul>
-      </section>
       <section id="bio">
         <h2>Biographical Sketch</h2>
         <p>With a Ph.D. in AI for Robotics from the School of Advanced Studies Sant’Anna, I have dedicated my career to advancing deep learning for robotics perception and planning. I held visiting positions at ETH Zurich and led AI R&amp;D teams in industry. Currently, I serve as Robotics and AI R&amp;D Project Manager at Almaviva S.p.A., spearheading cutting-edge initiatives in collaborative robotics.</p>
@@ -153,35 +63,20 @@
         <h2>Research Interests</h2>
         <p>My research focuses on building robotic systems that can learn from minimal examples—using zero-shot and one-shot imitation learning to mimic human adaptability. I design 3D generative models and novel view synthesis techniques for rich scene reconstruction, and develop category- &amp; instance-level 6D pose estimators for precise manipulation. Additionally, I integrate large language and vision-language models to drive autonomous decision-making in collaborative robotics settings.</p>
       </section>
-      <section id="publications">
-        <h2>Publications</h2>
-        <div class="publications">
-          <div class="publication-item">
-            <img class="teaser" src="" alt="Teaser image for Deep RL glucose control" loading="lazy">
-            <a href="https://example.com/publication1">Deep reinforcement learning for closed-loop blood glucose control: two approaches</a>
-          </div>
-          <div class="publication-item">
-            <img class="teaser" src="assets/teaser_i2c.png" alt="Teaser image for i2c-net paper" loading="lazy">
-            <a href="https://ieeexplore.ieee.org/abstract/document/10027166">i2c-net: Using Instance-Level Neural Networks for Monocular Category-Level 6D Pose Estimation</a>
-          </div>
-          <div class="publication-item">
-            <img class="teaser" src="" alt="Teaser image for One-Shot Imitation Learning" loading="lazy">
-            <a href="https://ieeexplore.ieee.org/abstract/document/10202200">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
-          </div>
-          <div class="publication-item">
-            <img class="teaser" src="" alt="Teaser image for Zero123-6D paper" loading="lazy">
-            <a href="https://ieeexplore.ieee.org/document/10802157">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
-          </div>
-          <div class="publication-item">
-            <img class="teaser" src="" alt="Teaser image for Instantpose paper" loading="lazy">
-            <a href="https://ieeexplore.ieee.org/document/10971214">Instantpose: Zero-shot instance-level 6D pose estimation from a single view</a>
-          </div>
-        </div>
+      
+      <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: <a href="mailto:francescodifelice96@gmail.com">francescodifelice96@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/francesco-di-felice-33a141175/">francesco-di-felice-33a141175</a></li>
+          <li>Google Scholar: <a href="https://scholar.google.com">Profile</a></li>
+        </ul>
       </section>
     </div>
   </main>
   <footer role="contentinfo">
-    Contact: <a href="mailto:francescodifelice96@gmail.com">francescodifelice96@gmail.com</a> | LinkedIn: <a href="https://www.linkedin.com/in/francesco-di-felice-33a141175/">Profile</a> | <a href="https://scholar.google.com">Google Scholar</a>
+    © 2025 Francesco Di Felice
   </footer>
 </body>
 </html>
+
