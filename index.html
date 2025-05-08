@@ -39,21 +39,28 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 2rem;
+      align-items: start;
     }
     .photo {
-      width: 100%;
-      max-width: 240px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       overflow: hidden;
       margin: 0 auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .photo img { width: 100%; height: auto; display: block; }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     section {
       background: var(--card-bg);
       padding: 1.5rem;
       border-radius: var(--radius);
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
     }
     h2 {
       margin-bottom: 1rem;
@@ -70,7 +77,24 @@
     ul { list-style: disc inside; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .publications a { display: block; padding: 0.5rem 0; }
+    .publications {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .publication-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .publication-item .teaser {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -92,24 +116,31 @@
     <div>
       <section>
         <h2>Biographical Sketch</h2>
-        <p>With a Ph.D. in AI for Robotics from the School of Advanced Studies Sant’Anna, I have dedicated my career to advancing deep learning for robotics perception and planning. I held visiting positions at ETH Zurich and led AI R&D teams in industry. Currently, I serve as Robotics and AI R&amp;D Project Manager at Almaviva S.p.A., spearheading cutting-edge initiatives in collaborative robotics.</p>
+        <p>With a Ph.D. in AI for Robotics from the School of Advanced Studies Sant’Anna, I have dedicated my career to advancing deep learning for robotics perception and planning. I held visiting positions at ETH Zurich and led AI R&amp;D teams in industry. Currently, I serve as Robotics and AI R&amp;D Project Manager at Almaviva S.p.A., spearheading cutting-edge initiatives in collaborative robotics.</p>
       </section>
-      <section style="margin-top:2rem;">
+      <section>
         <h2>Research Interests</h2>
-        <ul>
-          <li>Generalization & adaptation: zero-shot/one-shot imitation learning</li>
-          <li>3D generative modeling & novel view synthesis</li>
-          <li>Category- & instance-level 6D pose estimation</li>
-          <li>Integration of LLMs & VLMs for robotic autonomy</li>
-        </ul>
+        <p>My research is centered on creating robotic systems capable of rapid adaptation to new tasks, leveraging zero-shot and one-shot imitation learning techniques to achieve human-like flexibility. I develop advanced 3D generative models and novel view synthesis pipelines that provide rich spatial understanding from minimal data. Additionally, I focus on category- and instance-level 6D pose estimation algorithms to enable precise manipulation in unstructured environments. A core part of my work involves integrating large language and vision-language models to enhance autonomous decision-making and perception in collaborative robotics.</p>
       </section>
-      <section style="margin-top:2rem;">
+      <section>
         <h2>Publications</h2>
         <div class="publications">
-          <a href="https://example.com/publication1">Deep reinforcement learning for closed-loop blood glucose control</a>
-          <a href="https://example.com/publication2">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
-          <a href="https://example.com/publication3">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
-          <a href="https://example.com/publication4">Instantpose: Zero-shot instance-level 6d pose estimation from a single view</a>
+          <div class="publication-item">
+            <img class="teaser" src="" alt="Publication 1 teaser">
+            <a href="https://example.com/publication1">Deep reinforcement learning for closed-loop blood glucose control</a>
+          </div>
+          <div class="publication-item">
+            <img class="teaser" src="" alt="Publication 2 teaser">
+            <a href="https://example.com/publication2">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
+          </div>
+          <div class="publication-item">
+            <img class="teaser" src="" alt="Publication 3 teaser">
+            <a href="https://example.com/publication3">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
+          </div>
+          <div class="publication-item">
+            <img class="teaser" src="" alt="Publication 4 teaser">
+            <a href="https://example.com/publication4">Instantpose: Zero-shot instance-level 6d pose estimation from a single view</a>
+          </div>
         </div>
       </section>
     </div>
@@ -119,4 +150,3 @@
   </footer>
 </body>
 </html>
-
