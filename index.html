@@ -1,100 +1,122 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Francesco Di Felice - Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem;
-        }
-        .content {
-            max-width: 800px;
-            margin: auto;
-            padding: 1.5rem;
-        }
-        .profile {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 1rem auto;
-            display: block;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .card {
-            background-color: #fff;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .publication {
-            margin: 0.5rem 0;
-        }
-        .publication a {
-            display: block;
-            padding: 0.5rem;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francesco Di Felice</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --accent: #0066cc;
+      --card-bg: #f9f9f9;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: var(--card-bg);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.1rem; color: var(--accent); }
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+    .photo {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .photo img { width: 100%; height: auto; display: block; }
+    section {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      color: var(--fg);
+    }
+    p, li {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+    }
+    ul { list-style: disc inside; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .publications a { display: block; padding: 0.5rem 0; }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Francesco Di Felice</h1>
-        <p>Robotics and AI Researcher</p>
-    </header>
-    <div class=\"content\">
-        <img src=\"assets/profile.jpg\" alt=\"Profile Picture\" class=\"profile\">
-        <div class=\"card\">
-            <h2>About Me</h2>
-            <p>I am a Robotics and AI Researcher specializing in enhancing generalization capabilities of deep learning methods for robotics perception and planning. My research aims at enabling robots to adapt rapidly to unseen tasks using foundation models such as LLMs and VLMs, primarily in collaborative robotics. I hold a Ph.D. in AI for Robotics from the School of Advanced Studies Sant'Anna, where I focused on zero-shot and one-shot imitation learning, RGB-based 3D generative modeling, and 6D pose estimation. Currently, I lead R&D initiatives in Robotics and AI at Almaviva S.p.A., where I drive strategic innovation and technical excellence.</p>
-        </div>
-        <div class=\"card\">
-            <h2>Publications</h2>
-            <div class=\"publication\">
-                <a href=\"https://example.com/publication1\">Deep reinforcement learning for closed-loop blood glucose control</a>
-            </div>
-            <div class=\"publication\">
-                <a href=\"https://example.com/publication2\">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
-            </div>
-            <div class=\"publication\">
-                <a href=\"https://example.com/publication3\">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
-            </div>
-            <div class=\"publication\">
-                <a href=\"https://example.com/publication4\">Instantpose: Zero-shot instance-level 6d pose estimation from a single view</a>
-            </div>
-        </div>
-        <div class=\"card\">
-            <h2>Current Position</h2>
-            <p><strong>Robotics and AI R&D Project Manager at Almaviva S.p.A.</strong><br>
-            Leading innovation strategies and managing the setup and coordination of advanced robotics research labs, driving cutting-edge AI developments aligned with strategic business objectives.</p>
-        </div>
+  <header>
+    <h1>Francesco Di Felice</h1>
+    <p>Robotics &amp; AI Researcher</p>
+  </header>
+  <main>
+    <div class="photo">
+      <img src="assets/profile.jpg" alt="Francesco Di Felice">
     </div>
-    <footer>
-        <p>Contact: francescodifelice96@gmail.com | LinkedIn: <a href=\"https://www.linkedin.com/in/francesco-di-felice-33a141175/\">Francesco Di Felice</a> | <a href=\"https://scholar.google.com\">Google Scholar</a></p>
-    </footer>
+    <div>
+      <section>
+        <h2>Biographical Sketch</h2>
+        <p>With a Ph.D. in AI for Robotics from the School of Advanced Studies Sant’Anna, I have dedicated my career to advancing deep learning for robotics perception and planning. I held visiting positions at ETH Zurich and led AI R&D teams in industry. Currently, I serve as Robotics and AI R&amp;D Project Manager at Almaviva S.p.A., spearheading cutting-edge initiatives in collaborative robotics.</p>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Generalization & adaptation: zero-shot/one-shot imitation learning</li>
+          <li>3D generative modeling & novel view synthesis</li>
+          <li>Category- & instance-level 6D pose estimation</li>
+          <li>Integration of LLMs & VLMs for robotic autonomy</li>
+        </ul>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2>Publications</h2>
+        <div class="publications">
+          <a href="https://example.com/publication1">Deep reinforcement learning for closed-loop blood glucose control</a>
+          <a href="https://example.com/publication2">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
+          <a href="https://example.com/publication3">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
+          <a href="https://example.com/publication4">Instantpose: Zero-shot instance-level 6d pose estimation from a single view</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    Contact: <a href="mailto:francescodifelice96@gmail.com">francescodifelice96@gmail.com</a> | LinkedIn: <a href="https://www.linkedin.com/in/francesco-di-felice-33a141175/">Profile</a> | <a href="https://scholar.google.com">Google Scholar</a>
+  </footer>
 </body>
 </html>
+
