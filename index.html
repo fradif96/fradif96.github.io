@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Francesco Di Felice – Robotics & AI Researcher. Biographical sketch, research interests, and selected publications." />
   <title>Francesco Di Felice</title>
   <style>
     :root {
@@ -23,14 +24,17 @@
       min-height: 100vh;
     }
     header {
-      padding: 2rem 1rem;
-      text-align: center;
+      position: sticky;
+      top: 0;
       background: var(--card-bg);
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      z-index: 100;
     }
     header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
     header p { font-size: 1.1rem; color: var(--accent); }
-    main {
+    main[role="main"] {
       flex: 1;
       max-width: 900px;
       width: 100%;
@@ -41,14 +45,22 @@
       gap: 2rem;
       align-items: start;
     }
+    @media (max-width: 600px) {
+      main[role="main"] {
+        display: block;
+        margin: 1rem;
+      }
+      .photo { margin: 0 auto 2rem; }
+    }
     .photo {
       width: 240px;
       height: 240px;
       border-radius: 50%;
       overflow: hidden;
-      margin: 0 auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform .2s, box-shadow .2s;
     }
+    .photo:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
     .photo img {
       width: 100%;
       height: 100%;
@@ -61,7 +73,9 @@
       border-radius: var(--radius);
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       margin-bottom: 2rem;
+      transition: transform .2s, box-shadow .2s;
     }
+    section:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     h2 {
       margin-bottom: 1rem;
       font-size: 1.5rem;
@@ -69,6 +83,10 @@
       display: inline-block;
       padding-bottom: 0.25rem;
       color: var(--fg);
+    }
+    section p {
+      max-width: 60ch;
+      margin-bottom: 1rem;
     }
     p, li {
       margin-bottom: 0.75rem;
@@ -86,7 +104,11 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      padding: 0.5rem;
+      border-radius: var(--radius);
+      transition: transform .2s, box-shadow .2s;
     }
+    .publication-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .publication-item .teaser {
       width: 60px;
       height: 60px;
@@ -95,7 +117,8 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       flex-shrink: 0;
     }
-    footer {
+    .publication-item a { flex: 1; }
+    footer[role="contentinfo"] {
       text-align: center;
       padding: 1.5rem;
       background: var(--card-bg);
@@ -105,52 +128,53 @@
   </style>
 </head>
 <body>
-  <header>
+  <header role="banner">
     <h1>Francesco Di Felice</h1>
     <p>Robotics &amp; AI Researcher</p>
   </header>
-  <main>
+  <main role="main">
     <div class="photo">
-      <img src="assets/profile.jpg" alt="Francesco Di Felice">
+      <img src="assets/profile.jpg" alt="Portrait of Francesco Di Felice" loading="lazy">
     </div>
     <div>
-      <section>
+      <section id="bio">
         <h2>Biographical Sketch</h2>
         <p>With a Ph.D. in AI for Robotics from the School of Advanced Studies Sant’Anna, I have dedicated my career to advancing deep learning for robotics perception and planning. I held visiting positions at ETH Zurich and led AI R&amp;D teams in industry. Currently, I serve as Robotics and AI R&amp;D Project Manager at Almaviva S.p.A., spearheading cutting-edge initiatives in collaborative robotics.</p>
       </section>
-      <section>
+      <section id="interests">
         <h2>Research Interests</h2>
-        <p>My research is centered on creating robotic systems capable of rapid adaptation to new tasks, leveraging zero-shot and one-shot imitation learning techniques to achieve human-like flexibility. I develop advanced 3D generative models and novel view synthesis pipelines that provide rich spatial understanding from minimal data. Additionally, I focus on category- and instance-level 6D pose estimation algorithms to enable precise manipulation in unstructured environments. A core part of my work involves integrating large language and vision-language models to enhance autonomous decision-making and perception in collaborative robotics.</p>
+        <p>My research focuses on building robotic systems that can learn from minimal examples—using zero-shot and one-shot imitation learning to mimic human adaptability. I design 3D generative models and novel view synthesis techniques for rich scene reconstruction, and develop category- &amp; instance-level 6D pose estimators for precise manipulation. Additionally, I integrate large language and vision-language models to drive autonomous decision-making in collaborative robotics settings.</p>
       </section>
-      <section>
+      <section id="publications">
         <h2>Publications</h2>
         <div class="publications">
           <div class="publication-item">
-            <img class="teaser" src="" alt="Publication 1 teaser">
-            <a href="https://www.sciencedirect.com/science/article/pii/S2405896323000630">Deep reinforcement learning for closed-loop blood glucose control: two approaches</a>
+            <img class="teaser" src="" alt="Teaser image for Deep RL glucose control" loading="lazy">
+            <a href="https://example.com/publication1">Deep reinforcement learning for closed-loop blood glucose control: two approaches</a>
           </div>
           <div class="publication-item">
-            <img class="teaser" src="assets/teaser_i2c.png" alt="Publication 5 teaser">
+            <img class="teaser" src="assets/teaser_i2c.png" alt="Teaser image for i2c-net paper" loading="lazy">
             <a href="https://ieeexplore.ieee.org/abstract/document/10027166">i2c-net: Using Instance-Level Neural Networks for Monocular Category-Level 6D Pose Estimation</a>
           </div>
           <div class="publication-item">
-            <img class="teaser" src="" alt="Publication 2 teaser">
+            <img class="teaser" src="" alt="Teaser image for One-Shot Imitation Learning" loading="lazy">
             <a href="https://ieeexplore.ieee.org/abstract/document/10202200">One-Shot Imitation Learning With Graph Neural Networks for Pick-and-Place Manipulation Tasks</a>
           </div>
           <div class="publication-item">
-            <img class="teaser" src="" alt="Publication 3 teaser">
+            <img class="teaser" src="" alt="Teaser image for Zero123-6D paper" loading="lazy">
             <a href="https://ieeexplore.ieee.org/document/10802157">Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation</a>
           </div>
           <div class="publication-item">
-            <img class="teaser" src="" alt="Publication 4 teaser">
-            <a href="https://ieeexplore.ieee.org/document/10971214">Instantpose: Zero-shot instance-level 6d pose estimation from a single view</a>
+            <img class="teaser" src="" alt="Teaser image for Instantpose paper" loading="lazy">
+            <a href="https://ieeexplore.ieee.org/document/10971214">Instantpose: Zero-shot instance-level 6D pose estimation from a single view</a>
           </div>
         </div>
       </section>
     </div>
   </main>
-  <footer>
+  <footer role="contentinfo">
     Contact: <a href="mailto:francescodifelice96@gmail.com">francescodifelice96@gmail.com</a> | LinkedIn: <a href="https://www.linkedin.com/in/francesco-di-felice-33a141175/">Profile</a> | <a href="https://scholar.google.com">Google Scholar</a>
   </footer>
 </body>
 </html>
+
